@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,24 +8,107 @@
     tools:context=".MainActivity">
 
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="202dp">
+        <TextView
+            android:id="@+id/txt_organitation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SEGOB RENAPO"
-                android:textColor="@color/colorPrimaryDark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias=""/>
-            
-        </RelativeLayout>
-    </ScrollView>
+            android:layout_height="wrap_content"
+            android:text="SEGOB"/>
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar tu CURP"
+            android:layout_below="@id/txt_organitation"/>
+        <EditText
+            android:id="@+id/txt_co"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:text="Código de verificación: "
+            android:layout_below="@+id/txt_title"/>
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/txt_pa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_co"
+            android:inputType="text"
+            android:text="Primer apellido: " />
+
+        <EditText
+            android:id="@+id/txt_sa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_pa"
+            android:inputType="text"
+            android:text="Segundo Apellido: " />
+
+        <EditText
+            android:id="@+id/txt_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_sa"
+            android:inputType="text"
+            android:text="Nobre(s): " />
+        <TextView
+            android:id="@+id/txt_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_nom"
+            android:text="Sexo"/>
+        <CheckBox
+            android:id="@+id/checkbox_Fem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femenino"
+            android:layout_alignLeft="@+id/txt_sex"
+            android:layout_below="@+id/txt_nom"/>
+        <CheckBox
+            android:id="@+id/checkbox_mas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Masculino"
+            android:layout_alignLeft="@+id/checkbox_Fem"
+            android:layout_below="@+id/txt_nom"/>
+        <TextView
+            android:id="@+id/txt_fecha"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Fecha de nacimiento: "
+            android:layout_below="@+id/txt_sex"/>
+        <!--Aquí hay que poner el calendario o input fecha -->
+        <TextView
+            android:id="@+id/txt_es"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Entidad Federativa: "
+            android:layout_below="@+id/txt_fecha"/>
+        <Spinner
+            android:id="@+id/spinner_estados"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Estados"
+            android:layout_below="@+id/txt_es">
+
+        </Spinner>
+        <Button
+            android:id="@+id/Buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:layout_below="@+id/spinner_estados"/>
+        <Button
+            android:id="@+id/DialogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_below="@+id/Buscar"/>
+
+    </RelativeLayout>
+
+</ScrollView>
