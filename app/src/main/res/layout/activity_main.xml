@@ -10,27 +10,36 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="202dp">
+        android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/txt_organitation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SEGOB"/>
+            android:text="SEGOB"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@style/Base.TextAppearance.AppCompat.Display1"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/txt_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/txt_organitation"
             android:text="Buscar tu CURP"
-            android:layout_below="@id/txt_organitation"/>
+            android:textAlignment="center"
+            android:textColor="@drawable/ic_launcher_background"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/txt_co"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/txt_title"
             android:inputType="text"
             android:text="Código de verificación: "
-            android:layout_below="@+id/txt_title"/>
+            android:textAlignment="viewStart" />
 
         <EditText
             android:id="@+id/txt_pa"
@@ -55,45 +64,65 @@
             android:layout_below="@+id/txt_sa"
             android:inputType="text"
             android:text="Nobre(s): " />
-        <TextView
-            android:id="@+id/txt_sex"
+        <LinearLayout
+            android:id="@+id/layout_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_nom"
-            android:text="Sexo"/>
-        <CheckBox
-            android:id="@+id/checkbox_Fem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Femenino"
-            android:layout_alignLeft="@+id/txt_sex"
-            android:layout_below="@+id/txt_nom"/>
-        <CheckBox
-            android:id="@+id/checkbox_mas"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Masculino"
-            android:layout_alignLeft="@+id/checkbox_Fem"
-            android:layout_below="@+id/txt_nom"/>
+            android:orientation="horizontal"
+            android:layout_below="@+id/txt_nom">
+
+            <TextView
+                android:id="@+id/txt_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexo"
+                android:textAlignment="viewEnd"
+                android:textColor="@style/Base.TextAppearance.AppCompat" />
+            <CheckBox
+                android:id="@+id/checkbox_Fem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Femenino"
+                android:layout_alignLeft="@+id/txt_sex"/>
+            <CheckBox
+                android:id="@+id/checkbox_mas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Masculino"
+                android:layout_alignLeft="@+id/checkbox_Fem"/>
+        </LinearLayout>
+
         <TextView
             android:id="@+id/txt_fecha"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/layout_sex"
             android:text="Fecha de nacimiento: "
-            android:layout_below="@+id/txt_sex"/>
+            android:textColor="@style/Base.TextAppearance.AppCompat" />
         <!--Aquí hay que poner el calendario o input fecha -->
+        <EditText
+            android:id="@+id/txt_fe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_fecha"
+            android:text="dd/mm/aaaa" />
+
         <TextView
             android:id="@+id/txt_es"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/txt_fe"
             android:text="Entidad Federativa: "
-            android:layout_below="@+id/txt_fecha"/>
+            android:textColor="@style/Base.TextAppearance.AppCompat" />
+
         <Spinner
             android:id="@+id/spinner_estados"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Estados"
-            android:layout_below="@+id/txt_es">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_es"
+            android:background="@style/Base.TextAppearance.AppCompat"
+            android:popupBackground="@style/Base.TextAppearance.AppCompat"
+            android:text="Estados">
 
         </Spinner>
         <Button
